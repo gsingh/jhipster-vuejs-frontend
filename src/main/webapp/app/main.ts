@@ -22,6 +22,14 @@ import '../content/scss/vendor.scss';
 import AlertService from '@/shared/alert/alert.service';
 import ConfigurationService from '@/admin/configuration/configuration.service';
 
+import ProductionService from '@/entities/production/production.service';
+import EventOfPlateMillService from '@/entities/event-of-plate-mill/event-of-plate-mill.service';
+import PictureOfEventService from '@/entities/picture-of-event/picture-of-event.service';
+import VideoOfEventService from '@/entities/video-of-event/video-of-event.service';
+import ShiftManagerService from '@/entities/shift-manager/shift-manager.service';
+import HeavyPlateFinishedService from '@/entities/heavy-plate-finished/heavy-plate-finished.service';
+import NormalisingService from '@/entities/normalising/normalising.service';
+import ShippingService from '@/entities/shipping/shipping.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 Vue.config.productionTip = false;
@@ -74,6 +82,14 @@ new Vue({
     logsService: () => new LogsService(),
     metricsService: () => new MetricsService(),
     alertService: () => alertService,
+    productionService: () => new ProductionService(),
+    eventOfPlateMillService: () => new EventOfPlateMillService(),
+    pictureOfEventService: () => new PictureOfEventService(),
+    videoOfEventService: () => new VideoOfEventService(),
+    shiftManagerService: () => new ShiftManagerService(),
+    heavyPlateFinishedService: () => new HeavyPlateFinishedService(),
+    normalisingService: () => new NormalisingService(),
+    shippingService: () => new ShippingService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService
   },

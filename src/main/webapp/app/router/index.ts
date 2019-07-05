@@ -24,6 +24,54 @@ const JhiLogsComponent = () => import('../admin/logs/logs.vue');
 const JhiAuditsComponent = () => import('../admin/audits/audits.vue');
 const JhiMetricsComponent = () => import('../admin/metrics/metrics.vue');
 /* tslint:disable */
+// prettier-ignore
+const Production = () => import('../entities/production/production.vue');
+// prettier-ignore
+const ProductionUpdate = () => import('../entities/production/production-update.vue');
+// prettier-ignore
+const ProductionDetails = () => import('../entities/production/production-details.vue');
+// prettier-ignore
+const EventOfPlateMill = () => import('../entities/event-of-plate-mill/event-of-plate-mill.vue');
+// prettier-ignore
+const EventOfPlateMillUpdate = () => import('../entities/event-of-plate-mill/event-of-plate-mill-update.vue');
+// prettier-ignore
+const EventOfPlateMillDetails = () => import('../entities/event-of-plate-mill/event-of-plate-mill-details.vue');
+// prettier-ignore
+const PictureOfEvent = () => import('../entities/picture-of-event/picture-of-event.vue');
+// prettier-ignore
+const PictureOfEventUpdate = () => import('../entities/picture-of-event/picture-of-event-update.vue');
+// prettier-ignore
+const PictureOfEventDetails = () => import('../entities/picture-of-event/picture-of-event-details.vue');
+// prettier-ignore
+const VideoOfEvent = () => import('../entities/video-of-event/video-of-event.vue');
+// prettier-ignore
+const VideoOfEventUpdate = () => import('../entities/video-of-event/video-of-event-update.vue');
+// prettier-ignore
+const VideoOfEventDetails = () => import('../entities/video-of-event/video-of-event-details.vue');
+// prettier-ignore
+const ShiftManager = () => import('../entities/shift-manager/shift-manager.vue');
+// prettier-ignore
+const ShiftManagerUpdate = () => import('../entities/shift-manager/shift-manager-update.vue');
+// prettier-ignore
+const ShiftManagerDetails = () => import('../entities/shift-manager/shift-manager-details.vue');
+// prettier-ignore
+const HeavyPlateFinished = () => import('../entities/heavy-plate-finished/heavy-plate-finished.vue');
+// prettier-ignore
+const HeavyPlateFinishedUpdate = () => import('../entities/heavy-plate-finished/heavy-plate-finished-update.vue');
+// prettier-ignore
+const HeavyPlateFinishedDetails = () => import('../entities/heavy-plate-finished/heavy-plate-finished-details.vue');
+// prettier-ignore
+const Normalising = () => import('../entities/normalising/normalising.vue');
+// prettier-ignore
+const NormalisingUpdate = () => import('../entities/normalising/normalising-update.vue');
+// prettier-ignore
+const NormalisingDetails = () => import('../entities/normalising/normalising-details.vue');
+// prettier-ignore
+const Shipping = () => import('../entities/shipping/shipping.vue');
+// prettier-ignore
+const ShippingUpdate = () => import('../entities/shipping/shipping-update.vue');
+// prettier-ignore
+const ShippingDetails = () => import('../entities/shipping/shipping-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -140,6 +188,206 @@ export default new Router({
       name: 'JhiConfigurationComponent',
       component: JhiConfigurationComponent,
       meta: { authorities: ['ROLE_ADMIN'] }
+    }
+    ,
+    {
+      path: '/entity/production',
+      name: 'Production',
+      component: Production,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/production/new',
+      name: 'ProductionCreate',
+      component: ProductionUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/production/:productionId/edit',
+      name: 'ProductionEdit',
+      component: ProductionUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/production/:productionId/view',
+      name: 'ProductionView',
+      component: ProductionDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/event-of-plate-mill',
+      name: 'EventOfPlateMill',
+      component: EventOfPlateMill,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/event-of-plate-mill/new',
+      name: 'EventOfPlateMillCreate',
+      component: EventOfPlateMillUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/event-of-plate-mill/:eventOfPlateMillId/edit',
+      name: 'EventOfPlateMillEdit',
+      component: EventOfPlateMillUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/event-of-plate-mill/:eventOfPlateMillId/view',
+      name: 'EventOfPlateMillView',
+      component: EventOfPlateMillDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/picture-of-event',
+      name: 'PictureOfEvent',
+      component: PictureOfEvent,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/picture-of-event/new',
+      name: 'PictureOfEventCreate',
+      component: PictureOfEventUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/picture-of-event/:pictureOfEventId/edit',
+      name: 'PictureOfEventEdit',
+      component: PictureOfEventUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/picture-of-event/:pictureOfEventId/view',
+      name: 'PictureOfEventView',
+      component: PictureOfEventDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/video-of-event',
+      name: 'VideoOfEvent',
+      component: VideoOfEvent,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/video-of-event/new',
+      name: 'VideoOfEventCreate',
+      component: VideoOfEventUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/video-of-event/:videoOfEventId/edit',
+      name: 'VideoOfEventEdit',
+      component: VideoOfEventUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/video-of-event/:videoOfEventId/view',
+      name: 'VideoOfEventView',
+      component: VideoOfEventDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/shift-manager',
+      name: 'ShiftManager',
+      component: ShiftManager,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/shift-manager/new',
+      name: 'ShiftManagerCreate',
+      component: ShiftManagerUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/shift-manager/:shiftManagerId/edit',
+      name: 'ShiftManagerEdit',
+      component: ShiftManagerUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/shift-manager/:shiftManagerId/view',
+      name: 'ShiftManagerView',
+      component: ShiftManagerDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/heavy-plate-finished',
+      name: 'HeavyPlateFinished',
+      component: HeavyPlateFinished,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/heavy-plate-finished/new',
+      name: 'HeavyPlateFinishedCreate',
+      component: HeavyPlateFinishedUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/heavy-plate-finished/:heavyPlateFinishedId/edit',
+      name: 'HeavyPlateFinishedEdit',
+      component: HeavyPlateFinishedUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/heavy-plate-finished/:heavyPlateFinishedId/view',
+      name: 'HeavyPlateFinishedView',
+      component: HeavyPlateFinishedDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/normalising',
+      name: 'Normalising',
+      component: Normalising,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/normalising/new',
+      name: 'NormalisingCreate',
+      component: NormalisingUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/normalising/:normalisingId/edit',
+      name: 'NormalisingEdit',
+      component: NormalisingUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/normalising/:normalisingId/view',
+      name: 'NormalisingView',
+      component: NormalisingDetails,
+      meta: { authorities: ['ROLE_USER'] }
+    }
+    ,
+    {
+      path: '/entity/shipping',
+      name: 'Shipping',
+      component: Shipping,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/shipping/new',
+      name: 'ShippingCreate',
+      component: ShippingUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/shipping/:shippingId/edit',
+      name: 'ShippingEdit',
+      component: ShippingUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/shipping/:shippingId/view',
+      name: 'ShippingView',
+      component: ShippingDetails,
+      meta: { authorities: ['ROLE_USER'] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]
