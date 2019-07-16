@@ -53,7 +53,7 @@
                         <label class="form-control-label"  for="shipping-manager">Manager</label>
                         <select class="form-control" id="shipping-manager" name="manager" v-model="shipping.manager">
                             <option v-bind:value="null"></option>
-                            <option v-bind:value="shipping.manager && shiftManagerOption.id === shipping.manager.id ? shipping.manager : shiftManagerOption" v-for="shiftManagerOption in shiftManagers" :key="shiftManagerOption.id">{{shiftManagerOption.id}}</option>
+                            <option v-bind:value="shipping.manager && shiftManagerOption.id === shipping.manager.id ? shipping.manager : shiftManagerOption" v-for="shiftManagerOption in shiftManagers" :key="shiftManagerOption.id">{{shiftManagerOption.name}}</option>
                         </select>
                     </div>
                 </div>

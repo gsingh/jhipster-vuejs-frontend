@@ -47,7 +47,7 @@
                     <td>{{shipping.shippedTonnage}}</td>
                     <td>
                         <div v-if="shipping.manager">
-                            <router-link :to="{name: 'ShiftManagerView', params: {managerId: shipping.manager.id}}">{{shipping.manager.id}}</router-link>
+                            <router-link :to="{name: 'ShiftManagerView', params: {managerId: shipping.manager.id}}">{{shipping.manager.name}}</router-link>
                         </div>
                     </td>
                     <td class="text-right">

@@ -48,7 +48,7 @@
                         <label class="form-control-label"  for="normalising-manager">Manager</label>
                         <select class="form-control" id="normalising-manager" name="manager" v-model="normalising.manager">
                             <option v-bind:value="null"></option>
-                            <option v-bind:value="normalising.manager && shiftManagerOption.id === normalising.manager.id ? normalising.manager : shiftManagerOption" v-for="shiftManagerOption in shiftManagers" :key="shiftManagerOption.id">{{shiftManagerOption.id}}</option>
+                            <option v-bind:value="normalising.manager && shiftManagerOption.id === normalising.manager.id ? normalising.manager : shiftManagerOption" v-for="shiftManagerOption in shiftManagers" :key="shiftManagerOption.id">{{shiftManagerOption.name}}</option>
                         </select>
                     </div>
                 </div>

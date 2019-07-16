@@ -33,7 +33,7 @@
                     </dt>
                     <dd>
                         <div v-if="production.manager">
-                            <router-link :to="{name: 'ShiftManagerView', params: {managerId: production.manager.id}}">{{production.manager.id}}</router-link>
+                            <router-link :to="{name: 'ShiftManagerView', params: {managerId: production.manager.id}}">{{production.manager.name}}</router-link>
                         </div>
                     </dd>
                 </dl>

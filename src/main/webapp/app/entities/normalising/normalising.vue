@@ -45,7 +45,7 @@
                     <td>{{normalising.normalisedTonnage}}</td>
                     <td>
                         <div v-if="normalising.manager">
-                            <router-link :to="{name: 'ShiftManagerView', params: {managerId: normalising.manager.id}}">{{normalising.manager.id}}</router-link>
+                            <router-link :to="{name: 'ShiftManagerView', params: {managerId: normalising.manager.id}}">{{normalising.manager.name}}</router-link>
                         </div>
                     </td>
                     <td class="text-right">
