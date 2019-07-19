@@ -18,7 +18,9 @@
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="picture-of-event-imgFile">Img File</label>
-                        <input type="text" class="form-control" name="imgFile" id="picture-of-event-imgFile"
+                        <input type="file" class="form-control" ref= "myFiles" name="imgFile" id="picture-of-event-imgFile" v-on:change="setFileData($event, pictureOfEvent, 'imgFile', true)"
+                            :class="{'valid': !$v.pictureOfEvent.imgFile.$invalid, 'invalid': $v.pictureOfEvent.imgFile.$invalid }"   required/>
+                        <input type="hidden" class="form-control" name="imgFile" id="picture-of-event-imgFile"
                             :class="{'valid': !$v.pictureOfEvent.imgFile.$invalid, 'invalid': $v.pictureOfEvent.imgFile.$invalid }" v-model="$v.pictureOfEvent.imgFile.$model"  required/>
                         <div v-if="$v.pictureOfEvent.imgFile.$anyDirty && $v.pictureOfEvent.imgFile.$invalid">
                             <small class="form-text text-danger" v-if="!$v.pictureOfEvent.imgFile.required">

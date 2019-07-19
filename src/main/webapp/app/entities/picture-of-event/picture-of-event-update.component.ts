@@ -1,9 +1,11 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
+import { mixins } from 'vue-class-component';
 
 import { numeric, required, minLength, maxLength } from 'vuelidate/lib/validators';
 
 import EventOfPlateMillService from '../event-of-plate-mill/event-of-plate-mill.service';
 import { IEventOfPlateMill } from '@/shared/model/event-of-plate-mill.model';
+import JhiDataUtils from '@/shared/data/data-utils.service';
 
 import AlertService from '@/shared/alert/alert.service';
 import { IPictureOfEvent, PictureOfEvent } from '@/shared/model/picture-of-event.model';
@@ -21,7 +23,7 @@ const validations: any = {
 @Component({
   validations
 })
-export default class PictureOfEventUpdate extends Vue {
+export default class PictureOfEventUpdate extends mixins(JhiDataUtils) {
   @Inject('alertService') private alertService: () => AlertService;
   @Inject('pictureOfEventService') private pictureOfEventService: () => PictureOfEventService;
   public pictureOfEvent: IPictureOfEvent = new PictureOfEvent();
@@ -81,5 +83,19 @@ export default class PictureOfEventUpdate extends Vue {
       .then(res => {
         this.eventOfPlateMills = res.data;
       });
+  }
+
+  public clearInputImage(field, fieldContentType, idInput): void {
+    if (this.pictureOfEvent && field && fieldContentType) {
+      if (this.pictureOfEvent.hasOwnProperty(field)) {
+        this.pictureOfEvent[field] = null;
+      }
+      if (this.pictureOfEvent.hasOwnProperty(fieldContentType)) {
+        this.pictureOfEvent[fieldContentType] = null;
+      }
+      if (idInput) {
+        (<any>this).$refs[idInput] = null;
+      }
+    }
   }
 }
